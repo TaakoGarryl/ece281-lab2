@@ -49,7 +49,7 @@
      
      
      signal w_sw : std_logic_vector (3 downto 0):=  "0000";
-     signal w_seg :std_logic_vector (6 downto 0);
+     signal w_seg :std_logic_vector (6 downto 0):= "0000000";
     -- signal w_Y : std_logic_vector (6 downto 0);
      
    begin
@@ -69,43 +69,43 @@
        begin
        -- Place test cases here. The first two have been written for you
            w_sw <= x"0"; wait for 10 ns;
-               assert w_seg = x"40" report "error on nill" severity failure;
+               assert w_seg = x"40" report "error 0" severity error;
            w_sw <= x"1"; wait for 10 ns;
-               assert w_seg = x"79" report "error on Jan" severity failure;   
+              assert w_seg = x"79" report "error 1" severity error;   
            w_sw <= x"2"; wait for 10 ns;
-               assert w_seg = x"24" report "error on Feb" severity failure;
+               assert w_seg = x"24" report "error 2" severity error;
            w_sw <= x"3"; wait for 10 ns;
-               assert w_seg = x"30" report "error on mar" severity failure;    
+               assert w_seg = x"30" report "error 3" severity error;    
            w_sw <= x"4"; wait for 10 ns;    
-               assert w_seg = x"19" report "error on Apr" severity failure;
+               assert w_seg = x"19" report "error 4" severity error;
            w_sw <= x"5"; wait for 10 ns;    
-               assert w_seg = x"12" report "error on May" severity failure;
+               assert w_seg = x"12" report "error 5" severity error;
            w_sw <= x"6"; wait for 10 ns;    
-               assert w_seg = x"02" report "error on Jun" severity failure;
+               assert w_seg = x"02" report "error 6" severity error;
            w_sw <= x"7"; wait for 10 ns;    
-               assert w_seg = x"78" report "error on Jun" severity failure; 
+               assert w_seg = x"78" report "error 7" severity error; 
            w_sw <= x"8"; wait for 10 ns;    
-               assert w_seg = x"00" report "error on Jun" severity failure;
+               assert w_seg = x"00" report "error 8" severity error;
            --; wait for 10 ns;   
-              -- assert w_Y = '1' report "error on Aug" severity failure;
+              -- assert w_Y = '1' report "error on Aug" severity error;
            w_sw <= x"9"; wait for 10 ns;
-               assert w_seg = x"18" report "error on Sep" severity failure;
+               assert w_seg = x"18" report "error 9" severity error;
            w_sw <= x"A"; wait for 10 ns;
-               assert w_seg = x"08" report "error on Oct" severity failure;
+               assert w_seg = x"08" report "error A" severity error;
            w_sw <= x"B"; wait for 10 ns;
-               assert w_seg = x"03" report "error on Nov" severity failure;
+               assert w_seg = x"03" report "error b" severity error;
            w_sw <= x"C"; wait for 10 ns;
-               assert w_seg = x"27" report "error on Dec" severity failure;
+               assert w_seg = x"27" report "error c" severity error;
            w_sw <= x"D"; wait for 10 ns;
-               assert w_seg = x"21" report "error on Dec" severity failure;
+               assert w_seg = x"21" report "error d" severity error;
            w_sw <= x"E"; wait for 10 ns;
-               assert w_seg = x"06" report "error on Dec" severity failure;
+               assert w_seg = x"06" report "error e" severity error;
            w_sw <= x"F"; wait for 10 ns;
-               assert w_seg = x"0E" report "error on Dec" severity failure;
+               assert w_seg = x"0E" report "error F" severity error;
             --wait for 10 ns;
-              -- assert w_Y = '0' report "error on 14?" severity failure;
+              -- assert w_Y = '0' report "error on 14?" severity error;
             --wait for 10 ns;
-              -- assert w_Y = '0' report "error on Huh" severity failure;
+              -- assert w_Y = '0' report "error on Huh" severity error;
            
        wait; -- wait forever
        end process;    
