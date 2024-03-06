@@ -74,21 +74,23 @@ begin
     c_Sd <= '1' when ( (i_D = x"1") or
                      (i_D = x"4") or
                      (i_D = x"7") or
-                     (i_D = x"B") or
-                     (i_D = x"D") or
-                     (i_D = x"E") ) else '0';
+                     (i_D = x"9") or
+                     (i_D = x"A") or
+                     (i_D = x"F") ) else '0';
+    
     
     c_Se <= (not i_D(3) and i_D(0))
         or ( not i_D(3)and i_D(2) and not i_D(1))
         or (not i_D(2) and not i_D(1) and i_D(0));
         
-    c_Sf <= '1' when ( (i_D = x"1") or
-                       (i_D = x"2") or
-                       (i_D = x"3") or
-                       (i_D = x"7") or
-                       (i_D = x"1") or
-                       (i_D = x"8") or
-                       (i_D = x"9") ) else '0';
+     c_Sf <= '1' when ( (i_D = x"1") or
+                 (i_D = x"2") or
+               (i_D = x"3") or
+               (i_D = x"7") or
+               (i_D = x"1") or
+               (i_D = x"C") or
+               (i_D = x"D") ) else '0';   
+    
     
     c_Sg <= (not i_D(3) and not i_D(2) and not i_D(1))
         or ( not i_D(3) and i_D(2) and i_D(1) and i_D(0));
